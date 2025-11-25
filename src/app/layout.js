@@ -1,21 +1,15 @@
 import "./globals.css";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
 
 export const metadata = {
-  title: "14U",
-  description: "The platform for direct access to investors and breakthrough companies.",
+  title: "14U Capital",
+  description: "Turn Vision into Velocity",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-brand-bg text-brand-text">
-        <Navbar />
-        <main>
-          {children}
-        </main>
-        <Footer />
+      <body className="antialiased bg-black text-white selection:bg-pink-600 selection:text-white">
+        {children}
       </body>
     </html>
   );
