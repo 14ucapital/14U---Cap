@@ -1,10 +1,11 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
     <footer className="relative bg-black border-t border-white/10 pt-20 pb-10 overflow-hidden">
       
-      {/* Ambient Blue-Pink Gradient Glow (Requested Feature) */}
+      {/* Ambient Blue-Pink Gradient Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-pink-500 to-transparent opacity-50" />
       <div className="absolute bottom-0 right-0 w-[30rem] h-[30rem] bg-blue-900/10 blur-[120px] rounded-full pointer-events-none mix-blend-screen" />
       <div className="absolute top-0 left-0 w-[30rem] h-[30rem] bg-pink-900/10 blur-[120px] rounded-full pointer-events-none mix-blend-screen" />
@@ -16,13 +17,19 @@ export default function Footer() {
           <div className="lg:col-span-5 space-y-8">
             {/* Logo */}
             <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-pink-600 to-blue-600 flex items-center justify-center text-white font-bold text-[10px] shadow-lg shadow-pink-900/20">
-                14U
+              <div className="relative w-14 h-10">
+                <Image 
+                  src="/logo2.png" 
+                  alt="14U Capital Logo" 
+                  width={100} 
+                  height={160} 
+                  className="object-contain w-full h-full"
+                />
               </div>
-              <span className="text-xl font-bold text-white tracking-tight">14U Capital</span>
+              <span className="text-xl font-bold text-white tracking-tight">Capital</span>
             </div>
 
-            {/* Address Area (Placeholder based on your image structure) */}
+            {/* Address Area */}
             <div className="text-slate-400 text-sm leading-relaxed">
               <p>14U Capital Headquarters</p>
               <p>Mumbai, Maharashtra</p>

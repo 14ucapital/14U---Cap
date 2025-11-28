@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Button from "@/components/ui/Button";
 
 export default function Navbar() {
@@ -7,12 +8,19 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo Area */}
         <Link href="/" className="flex items-center space-x-3 group">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-pink to-brand-rose flex items-center justify-center text-white font-bold text-xs shadow-lg shadow-brand-pink/20 group-hover:shadow-brand-pink/40 transition-all duration-500">
-            14U
+          <div className="relative w-14 h-10 group-hover:scale-105 transition-transform duration-500">
+            <Image 
+              src="/logo2.png" 
+              alt="14U Capital Logo" 
+              width={160} 
+              height={160} 
+              className="object-contain w-full h-full"
+              priority
+            />
           </div>
           <div>
             <div className="font-bold text-white tracking-tight text-lg group-hover:text-brand-pink transition-colors">
-              14U Capital
+              Capital
             </div>
             <div className="text-[10px] uppercase tracking-widest text-brand-muted font-semibold">
               Turn vision into velocity
@@ -33,7 +41,7 @@ export default function Navbar() {
           ))}
           
           <Button href="#contact" size="sm">
-            Get Started
+            Contact Us
           </Button>
         </nav>
       </div>
