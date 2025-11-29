@@ -44,12 +44,6 @@ export default function Footer() {
                   hello@14ucapital.in
                 </a>
               </div>
-              <div>
-                <span className="block text-slate-500 mb-1">Social</span>
-                <a href="#" className="text-white hover:text-pink-500 transition-colors">
-                  @14ucapital
-                </a>
-              </div>
             </div>
           </div>
 
@@ -68,14 +62,28 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Column 2: Social */}
+            {/* Column 2: Social - UPDATED */}
             <div>
               <h4 className="text-white font-semibold mb-6">Social</h4>
               <ul className="space-y-4 text-sm text-slate-400">
-                <li><a href="#" className="hover:text-blue-400 transition-colors">LinkedIn</a></li>
-                <li><a href="#" className="hover:text-blue-400 transition-colors">Twitter (X)</a></li>
-                <li><a href="#" className="hover:text-pink-500 transition-colors">Instagram</a></li>
-                <li><a href="#" className="hover:text-red-500 transition-colors">YouTube</a></li>
+                <li>
+                  <a 
+                    href="mailto:hello@14ucapital.in" 
+                    className="hover:text-pink-500 transition-colors"
+                  >
+                    Send Email
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="https://www.linkedin.com/company/14u-capital/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="hover:text-blue-400 transition-colors"
+                  >
+                    LinkedIn
+                  </a>
+                </li>
               </ul>
             </div>
 

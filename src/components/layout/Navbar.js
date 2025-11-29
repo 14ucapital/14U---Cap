@@ -19,12 +19,13 @@ export default function Navbar() {
             />
           </div>
           <div>
-            <div className="font-bold text-white tracking-tight text-lg group-hover:text-brand-pink transition-colors">
-              Capital
-            </div>
-            <div className="text-[10px] uppercase tracking-widest text-brand-muted font-semibold">
+            
+            {/* UPDATED: Shimmering Text Effect */}
+            <div className="text-[10px] uppercase tracking-widest font-semibold pt-3
+              animate-shimmer bg-gradient-to-r from-brand-muted via-white to-brand-muted bg-[length:200%_100%] bg-clip-text text-transparent">
               Turn vision into velocity
             </div>
+            
           </div>
         </Link>
 
