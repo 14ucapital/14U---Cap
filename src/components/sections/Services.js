@@ -7,41 +7,51 @@ export default function Services() {
     {
       title: "Fundraising & Capital Advisory",
       desc: "We support founders across the fundraising lifecycle — from preparing investor-ready materials to managing introductions and negotiations.",
-      painPoints: "Noisy intros, unclear valuation, poor negotiation outcomes.",
-      solve: "Thesis-aligned outreach, intro packages, term negotiation support.",
-      deliverables: "Investor list, outreach campaign, intro notes, term sheet negotiation support.",
+      lines: [
+        "Founder pain points: noisy intros, unclear valuation, poor negotiation outcomes.",
+        "How we solve: thesis-aligned outreach, intro packages, term negotiation support.",
+        "Deliverables: investor list, outreach campaign, intro notes, term sheet negotiation support."
+      ],
       color: "from-brand-pink to-brand-rose"
     },
     {
       title: "Valuation & Financial Modeling",
       desc: "Investor-grade models and valuation analysis to help founders price rounds and communicate growth plans.",
-      painPoints: "Opaque expectations, weak models.",
-      solve: "Build 3-statement models, DCFs, comparables, scenario analysis.",
-      deliverables: "Investor-ready model, valuation memo, sensitivity analysis.",
+      lines: [
+        "Founder pain points: opaque expectations, weak models.",
+        "How we solve: build 3-statement models, DCFs, comparables, scenario analysis.",
+        "Deliverables: investor-ready model, valuation memo, sensitivity analysis."
+      ],
       color: "from-blue-600 to-cyan-500"
     },
     {
       title: "M&A & Strategic Transactions",
       desc: "Buy-side and sell-side advisory with a focus on strategic fit, diligence, and deal execution.",
-      painPoints: "Fragmented buyers, slow processes.",
-      solve: "Target mapping, outreach, negotiation, diligence coordination.",
-      deliverables: "Buyer list, process management, term guidance, closing support.",
+      lines: [
+        "Founder pain points: fragmented buyers, slow processes.",
+        "How we solve: target mapping, outreach, negotiation, diligence coordination.",
+        "Deliverables: buyer list, process management, term guidance, closing support."
+      ],
       color: "from-purple-600 to-indigo-600"
     },
     {
       title: "Investment Research & Market Insights",
       desc: "Deep-dive research to inform strategy, positioning, and investor conversations.",
-      painPoints: "Shallow market narratives, weak TAM arguments.",
-      solve: "Competitive mapping, TAM/SAM analysis, go-to-market benchmarking.",
-      deliverables: "Market note, competitive matrix, go-to-market framework.",
+      lines: [
+        "Founder pain points: shallow market narratives, weak TAM arguments.",
+        "How we solve: competitive mapping, TAM/SAM analysis, go-to-market benchmarking.",
+        "Deliverables: market note, competitive matrix, go-to-market framework."
+      ],
       color: "from-indigo-500 to-blue-500"
     },
     {
       title: "Pitch Deck & Storytelling Development",
       desc: "We build investor narratives that align story and metrics to win credibility and interest.",
-      painPoints: "Scattered story, weak investor hooks.",
-      solve: "Narrative design, data-led storytelling, investor-ready slides.",
-      deliverables: "Structured deck, investor one-pager, outreach copy.",
+      lines: [
+        "Founder pain points: scattered story, weak investor hooks.",
+        "How we solve: narrative design, data-led storytelling, investor-ready slides.",
+        "Deliverables: structured deck, investor one-pager, outreach copy."
+      ],
       isWide: true,
       color: "from-brand-pink to-purple-600"
     }
@@ -114,19 +124,12 @@ export default function Services() {
                   </p>
                 </div>
 
-                <div className="space-y-5 mt-auto">
-                  <div>
-                    <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block mb-1">Founder Pain Points</span>
-                    <p className="text-slate-400 text-sm leading-relaxed">{service.painPoints}</p>
-                  </div>
-                  <div>
-                    <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block mb-1">How We Solve</span>
-                    <p className="text-slate-400 text-sm leading-relaxed">{service.solve}</p>
-                  </div>
-                  <div className="bg-white/5 rounded-lg p-3 border border-white/5 mt-2">
-                    <span className="text-[10px] font-bold text-brand-pink uppercase tracking-wider block mb-1">Deliverables</span>
-                    <p className="text-white text-sm font-medium leading-relaxed">{service.deliverables}</p>
-                  </div>
+                <div className="space-y-3 mt-auto">
+                  {service.lines.map((line, idx) => (
+                    <p key={idx} className="text-slate-400 text-sm leading-relaxed">
+                      {line}
+                    </p>
+                  ))}
                 </div>
               </Card>
             </ScrollReveal>
