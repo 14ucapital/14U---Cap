@@ -21,7 +21,6 @@ export default function Home() {
         <Team />
         <Contact />
       </main>
-
       <Footer />
     </div>
   );

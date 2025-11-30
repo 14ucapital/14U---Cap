@@ -32,7 +32,7 @@ export default function Footer() {
             {/* Address Area */}
             <div className="text-slate-400 text-sm leading-relaxed">
               <p>14U Capital Headquarters</p>
-              <p>Mumbai, Maharashtra</p>
+              <p>Bengaluru, Karnataka</p>
               <p>India</p>
             </div>
 
