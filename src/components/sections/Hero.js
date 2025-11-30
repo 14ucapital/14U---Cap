@@ -60,50 +60,6 @@ export default function Hero() {
           </Button>
         </div>
 
-        {/* PLATFORM HIGHLIGHTS - Updated Offerings */}
-        <div className="mt-24 border-t border-white/10 pt-10">
-          <p className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.25em] mb-12">
-            Our Expertise
-          </p>
-          
-          <div className="flex flex-col md:flex-row justify-center items-center gap-y-8">
-            {[
-              { title: "Strategic Fundraising", desc: "Seed to Pre-IPO" },
-              { title: "M&A Execution", desc: "Buy & Sell Side" },
-              { title: "Financial Modeling", desc: "Investor-Grade" },
-              { title: "Market Intelligence", desc: "Deep-Dive Data" }
-            ].map((item, i, arr) => (
-              <React.Fragment key={i}>
-                
-                {/* The Info Item */}
-                <div className="flex flex-col items-center justify-center text-center group cursor-default w-48">
-                  {/* Bold White Text (Top) */}
-                  <span className="text-xl md:text-2xl font-bold text-white mb-2 group-hover:text-brand-pink transition-colors duration-300">
-                    {item.title}
-                  </span>
-                  
-                  {/* Thin/Normal Gray Text (Bottom) */}
-                  <span className="text-sm font-light text-slate-500 tracking-wide group-hover:text-slate-300 transition-colors duration-300">
-                    {item.desc}
-                  </span>
-                </div>
-
-                {/* The "Design X" Divider Line (Only between items) */}
-                {i < arr.length - 1 && (
-                  <div className="hidden md:flex items-center justify-center px-2 lg:px-6">
-                    <div className="relative w-16 lg:w-24 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent flex items-center justify-center">
-                      <span className="text-[10px] text-white/30 font-mono bg-black px-1.5 uppercase tracking-widest">
-                        X
-                      </span>
-                    </div>
-                  </div>
-                )}
-
-              </React.Fragment>
-            ))}
-          </div>
-        </div>
-
       </div>
     </section>
   );
