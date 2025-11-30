@@ -13,7 +13,7 @@ export default function Team() {
     },
     {
       name: "Depesh Vyas",
-      role: "Angel Network Head",
+      role: "Angel Investor & Network Head",
       bio: "Angel investor and head of a fast-growing angel network. Experienced in scaling ventures from $5K to $180K MRR, I specialize in identifying high-potential founders, aligning them with the right investors, and driving rigorous, thesis-focused startup qualification.",
       initials: "DV",
       color: "from-purple-600 to-indigo-600"
