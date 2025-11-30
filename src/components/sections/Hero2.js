@@ -2,9 +2,9 @@ import Card from "@/components/ui/Card";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
-export default function About() {
+export default function Hero2() {
   return (
-    <section id="about" className="py-24 relative">
+    <section id="hero2" className="py-24 relative">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
         {/* Section Header */}

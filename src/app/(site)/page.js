@@ -1,11 +1,12 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
-import About from "@/components/sections/About";
+import Hero2 from "@/components/sections/Hero2";
 import Services from "@/components/sections/Services";
 import Team from "@/components/sections/Team";
 import Contact from "@/components/sections/Contact";
-import { ScrollReveal } from "@/components/ui/ScrollReveal"; // Import the new component
+import About from "@/components/sections/About";
+// Removed ScrollReveal import since it's no longer used here
 
 export default function Home() {
   return (
@@ -13,25 +14,12 @@ export default function Home() {
       <Navbar />
 
       <main className="flex-grow w-full">
-        {/* Hero usually doesn't need scroll reveal as it's already in view */}
         <Hero />
-
-        {/* Wrap subsequent sections to animate them on scroll */}
-        <ScrollReveal>
-          <About />
-        </ScrollReveal>
-
-        <ScrollReveal>
-          <Services />
-        </ScrollReveal>
-
-        <ScrollReveal>
-          <Team />
-        </ScrollReveal>
-        
-        <ScrollReveal>
-          <Contact />
-        </ScrollReveal>
+        <Hero2 />
+        <About />
+        <Services />
+        <Team />
+        <Contact />
       </main>
 
       <Footer />
