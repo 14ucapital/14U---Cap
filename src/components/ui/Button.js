@@ -13,9 +13,9 @@ export default function Button({
 
   // Style variants
   const variantStyles = {
-    primary: 'bg-gradient-to-r from-brand-pink to-brand-rose text-white hover:opacity-90 shadow-[0_0_20px_rgba(236,72,153,0.3)] hover:shadow-[0_0_30px_rgba(236,72,153,0.5)] hover:scale-105',
-    secondary: 'bg-white/5 text-white border border-white/10 hover:bg-white/10 hover:border-brand-pink/50 backdrop-blur-sm',
-    ghost: 'bg-transparent text-brand-muted hover:text-brand-pink',
+    primary: 'bg-gradient-to-r from-brand-pink to-brand-rose text-white hover:opacity-90 shadow-[0_0_20px_rgba(183,115,128,0.3)] hover:shadow-[0_0_30px_rgba(183,115,128,0.5)] hover:scale-105',
+    secondary: 'bg-white text-slate-900 border border-slate-200 shadow-sm hover:bg-slate-50 hover:border-brand-pink/50',
+    ghost: 'bg-transparent text-slate-600 hover:text-brand-pink',
   };
 
   // Size variants

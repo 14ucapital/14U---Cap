@@ -25,10 +25,17 @@ export const SparklesCore = (props) => {
       setInit(true);
     });
   }, []);
+  const [isReady, setIsReady] = useState(false);
   const controls = useAnimation();
 
   const particlesLoaded = async (container) => {
     if (container) {
+      setIsReady(true);
+    }
+  };
+
+  useEffect(() => {
+    if (isReady) {
       controls.start({
         opacity: 1,
         transition: {
@@ -36,7 +43,7 @@ export const SparklesCore = (props) => {
         },
       });
     }
-  };
+  }, [isReady, controls]);
 
   const generatedId = useId();
   return (

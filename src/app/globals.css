@@ -10,16 +10,16 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: #000000;
+  background-color: #fbf6f3;
 }
 
 body {
-  color: white;
-  background: black;
+  color: #111827;
+  background: #fbf6f3;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* Professional selection color */
-  @apply selection:bg-pink-600 selection:text-white;
+  @apply selection:bg-[#b77380] selection:text-white;
 }
 
 
@@ -90,3 +90,4 @@ body {
     @apply bg-background text-foreground;
   }
 }
+

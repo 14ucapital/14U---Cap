@@ -7,13 +7,16 @@ module.exports = {
   ],
   theme: {
     extend: {
+        fontFamily: {
+            sans: ['var(--font-pjs)', 'sans-serif'],
+        },
         colors: {
             brand: {
                 black: '#000000',
                 dark: '#0A0A0A',
-                pink: '#EC4899',
-                rose: '#E11D48',
-                muted: '#94A3B8'
+                pink: '#b77380',
+                rose: '#b77380',
+                muted: '#fbf6f3'
             },
             background: 'hsl(var(--background))',
             foreground: 'hsl(var(--foreground))',
