@@ -1,0 +1,104 @@
+[
+  {
+    "id": "1",
+    "name": "Pelican",
+    "stage": "Pre-Series",
+    "sector": "Modern Workspace",
+    "description": "A workspace and furniture solutions startup modernizing office interiors through scalable, design-led, and tech-enabled products.",
+    "status": "Invested by 14U",
+    "logo": "pelican.jpeg",
+    "color": "from-brand-pink to-brand-rose",
+    "password": "pelican",
+    "tasks": [],
+    "updates": []
+  },
+  {
+    "id": "2",
+    "name": "Mark AI",
+    "stage": "Seed",
+    "sector": "AI Advertising",
+    "description": "An AI-powered DOOH advertising marketplace that enables real-time booking, targeting, and optimization of digital outdoor ad screens.",
+    "status": "Invested by 14U",
+    "logo": "",
+    "color": "from-purple-600 to-indigo-600",
+    "password": "markai",
+    "tasks": [],
+    "updates": []
+  },
+  {
+    "id": "3",
+    "name": "Plugzmart",
+    "stage": "Pre-Series",
+    "sector": "Energy Tech",
+    "description": "An energy-tech startup building an AI-driven platform to manage EV charging, solar, batteries, and smart energy infrastructure.",
+    "status": "Currently Raising",
+    "logo": "",
+    "color": "from-blue-600 to-cyan-500",
+    "password": "plugzmart-2026",
+    "tasks": [],
+    "updates": []
+  },
+  {
+    "id": "4",
+    "name": "XO Labs",
+    "stage": "Seed",
+    "sector": "Health Tech",
+    "description": "A healthcare outcome-intelligence startup building wearable-enabled recovery and analytics infrastructure for orthopedic surgeries and hospitals.",
+    "status": "Currently Raising",
+    "logo": "",
+    "color": "from-indigo-500 to-blue-500",
+    "password": "xo-labs-updates",
+    "tasks": [],
+    "updates": []
+  },
+  {
+    "id": "5",
+    "name": "Lumin Aerospace",
+    "stage": "Seed",
+    "sector": "Drone Tech",
+    "description": "A drone technology company developing intelligent aerial automation and imaging solutions for commercial applications.",
+    "status": "Currently Raising",
+    "logo": "",
+    "color": "from-teal-500 to-emerald-500",
+    "password": "lumin-space",
+    "tasks": [],
+    "updates": []
+  },
+  {
+    "id": "1778330319473",
+    "name": "New Company",
+    "stage": "PrePost",
+    "sector": "ForTech",
+    "description": "hellohereiamharry",
+    "status": "Hey I am harry",
+    "logo": "hello.jpgpng",
+    "color": "from-indigo-500 to-blue-500",
+    "password": "heyharry",
+    "updates": [
+      {
+        "content": "hiam ahfodsaj",
+        "sender": "Admin",
+        "id": "1778330403891",
+        "timestamp": "2026-05-09T12:40:03.891Z"
+      }
+    ],
+    "tasks": [
+      {
+        "title": "dfadsfsd",
+        "date": "2026-05-11",
+        "status": "in-progress",
+        "id": "1778330409379"
+      }
+    ]
+  },
+  {
+    "id": "1778330482309",
+    "name": "New Company",
+    "stage": "Seed",
+    "sector": "Tech",
+    "description": "",
+    "status": "Currently Raising",
+    "logo": "",
+    "color": "from-brand-pink to-brand-rose"
+  }
+]

@@ -1,58 +1,77 @@
-import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
+import { NextResponse } from 'next/server';
 
 export async function POST(request) {
   try {
-    // 1. Check API Key immediately
-    if (!process.env.RESEND_API_KEY) {
-      console.error("❌ ERROR: RESEND_API_KEY is missing in .env.local file");
-      return NextResponse.json({ error: 'Missing API Key' }, { status: 500 });
+    const apiKey = process.env.RESEND_API_KEY;
+    if (!apiKey) {
+      throw new Error('RESEND_API_KEY is not configured');
     }
 
-    const resend = new Resend(process.env.RESEND_API_KEY);
-    const formData = await request.formData();
-    
-    // Log the data receiving (for debugging)
-    console.log("📨 Received form submission from:", formData.get('email'));
+    const resend = new Resend(apiKey);
+    const body = await request.json();
+    const { name, company, email, message, fileUrl } = body;
 
-    const email = formData.get('email');
-    const subject = formData.get('subject');
-    const message = formData.get('message');
-    const file = formData.get('file');
-
-    // 2. Prepare Attachments
-    let attachments = [];
-    if (file && file instanceof Blob && file.size > 0) {
-      // Log file size to ensure it's not too big (Vercel limit is 4MB)
-      console.log(`📎 Attachment detected: ${file.name} (${(file.size / 1024 / 1024).toFixed(2)} MB)`);
-      const buffer = Buffer.from(await file.arrayBuffer());
-      attachments.push({
-        filename: file.name,
-        content: buffer,
-      });
+    // Validate required fields
+    if (!name || !email || !company) {
+      return NextResponse.json({ success: false, error: 'Missing required fields' }, { status: 400 });
     }
 
-    // 3. Send Email
     const data = await resend.emails.send({
-      from: 'contact@14ucapital.in', // Ensure this EXACT domain is verified in Resend
-      to: '14ucapital@gmail.com',     // Make sure this email works, or change to your personal Gmail for testing
+      from: '14U Capital <portal@14ucapital.in>', 
+      to: ['Hello@14ucapital.in', 'Investments@14ucapital.in'], 
       reply_to: email,
-      subject: `New 14U Inquiry: ${subject}`,
-      text: `You have received a new message via the 14U Capital website.\n\nFrom: ${email}\n\nMessage:\n${message}`,
-      attachments: attachments,
+      subject: `[Pitch Deck] ${company} - ${name}`,
+      html: `
+        <div style="font-family: 'Inter', sans-serif; max-w-2xl; margin: auto; padding: 40px; border: 1px solid #e2e8f0; border-radius: 12px; background-color: #ffffff;">
+          <div style="margin-bottom: 32px;">
+            <h2 style="color: #0f172a; font-size: 24px; font-weight: 800; margin-bottom: 8px; tracking: -0.025em;">New Pitch Deck Submission</h2>
+            <p style="color: #64748b; font-size: 16px; margin: 0;">A new founder has reached out via the 14U Capital portal.</p>
+          </div>
+
+          <div style="display: grid; gap: 24px; margin-bottom: 32px;">
+            <div style="padding: 16px; background: #f8fafc; border-radius: 8px;">
+              <p style="text-transform: uppercase; font-size: 11px; font-weight: 700; color: #94a3b8; margin: 0 0 4px 0; letter-spacing: 0.05em;">Founder Name</p>
+              <p style="font-size: 16px; font-weight: 600; color: #1e293b; margin: 0;">${name}</p>
+            </div>
+            
+            <div style="padding: 16px; background: #f8fafc; border-radius: 8px;">
+              <p style="text-transform: uppercase; font-size: 11px; font-weight: 700; color: #94a3b8; margin: 0 0 4px 0; letter-spacing: 0.05em;">Company</p>
+              <p style="font-size: 16px; font-weight: 600; color: #1e293b; margin: 0;">${company}</p>
+            </div>
+
+            <div style="padding: 16px; background: #f8fafc; border-radius: 8px;">
+              <p style="text-transform: uppercase; font-size: 11px; font-weight: 700; color: #94a3b8; margin: 0 0 4px 0; letter-spacing: 0.05em;">Email Address</p>
+              <p style="font-size: 16px; font-weight: 600; color: #1e293b; margin: 0;">${email}</p>
+            </div>
+          </div>
+
+          <div style="margin-bottom: 32px;">
+            <p style="text-transform: uppercase; font-size: 11px; font-weight: 700; color: #94a3b8; margin: 0 0 8px 0; letter-spacing: 0.05em;">Message</p>
+            <div style="padding: 20px; background: #fdf2f8; border-left: 4px solid #b77380; border-radius: 4px; color: #475569; line-height: 1.6; font-size: 15px;">
+              ${message.replace(/\n/g, '<br/>') || "No additional message provided."}
+            </div>
+          </div>
+
+          ${fileUrl ? `
+          <div style="margin-top: 40px; text-align: center;">
+            <a href="${fileUrl}" style="display: inline-block; padding: 14px 28px; background-color: #b77380; color: #ffffff; font-weight: 700; text-decoration: none; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(183, 115, 128, 0.2);">
+              Review Pitch Deck
+            </a>
+            <p style="margin-top: 12px; font-size: 12px; color: #94a3b8;">Click to download the attached presentation</p>
+          </div>
+          ` : ''}
+          
+          <div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid #e2e8f0; text-align: center;">
+            <p style="font-size: 12px; color: #94a3b8; margin: 0;">Sent via 14U Capital Automated Portal</p>
+          </div>
+        </div>
+      `,
     });
 
-    // 4. Handle Resend Specific Errors
-    if (data.error) {
-      console.error("❌ RESEND API ERROR:", JSON.stringify(data.error, null, 2));
-      return NextResponse.json({ error: data.error.message }, { status: 500 });
-    }
-
-    console.log("✅ Email sent successfully:", data.data?.id);
-    return NextResponse.json({ message: 'Success' }, { status: 200 });
-
+    return NextResponse.json({ success: true, data });
   } catch (error) {
-    console.error('❌ SERVER INTERNAL ERROR:', error);
-    return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
+    console.error('Resend Error:', error);
+    return NextResponse.json({ success: false, error: error.message }, { status: 500 });
   }
 }
