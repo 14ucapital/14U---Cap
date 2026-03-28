@@ -1,17 +1,26 @@
+import { Plus_Jakarta_Sans } from 'next/font/google';
 import "./globals.css";
+import NavigationRefresh from "@/components/utils/NavigationRefresh";
+
+const plusJakartaSans = Plus_Jakarta_Sans({ 
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800'],
+  variable: '--font-pjs'
+});
 
 export const metadata = {
   title: "14U Capital",
   icons: {
-    icon: '/tabicon.png', 
+    icon: '/logo-14u-capital.webp', 
   },
   description: "Turn Vision into Velocity",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className="antialiased bg-black text-white selection:bg-pink-600 selection:text-white">
+    <html lang="en" className={plusJakartaSans.variable} suppressHydrationWarning>
+      <body className="antialiased bg-[#fbf6f3] text-slate-900 selection:bg-brand-pink/30 selection:text-slate-900 font-sans" suppressHydrationWarning>
+        <NavigationRefresh />
         {children}
       </body>
     </html>
