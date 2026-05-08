@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import Card from "@/components/ui/Card";
 import TiltCard from "@/components/ui/TiltCard";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
@@ -60,17 +59,7 @@ export default async function HomePortfolio() {
                     <div className="relative z-10 flex-grow">
                       <div className="flex items-center space-x-3 mb-6">
                         <div className={`w-10 h-10 rounded-full bg-gradient-to-br ${company.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-500 overflow-hidden`}>
-                          {company.logo ? (
-                            <Image
-                              src={company.logo.startsWith("http") || company.logo.startsWith("/") ? company.logo : `/portfolio/${company.logo}`}
-                              alt={company.name}
-                              width={40}
-                              height={40}
-                              className="w-full h-full object-cover"
-                            />
-                          ) : (
-                            <span className="font-bold text-white text-sm">{company.name.charAt(0)}</span>
-                          )}
+                          <span className="font-bold text-white text-sm">{company.name.charAt(0)}</span>
                         </div>
                         <h3 className="text-xl font-extrabold text-[#0B132B] tracking-tight">{company.name}</h3>
                       </div>

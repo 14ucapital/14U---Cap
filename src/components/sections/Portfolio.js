@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 import Card from "@/components/ui/Card";
 import TiltCard from "@/components/ui/TiltCard";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
@@ -70,19 +70,9 @@ export default async function Portfolio({ showHeader = true }) {
                     <div className="relative z-10 flex-grow">
                       <div className="flex items-center space-x-4 mb-8">
                         <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${company.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-500 overflow-hidden`}>
-                          {company.logo ? (
-                            <Image
-                              src={company.logo.startsWith("http") || company.logo.startsWith("/") ? company.logo : `/portfolio/${company.logo}`}
-                              alt={company.name}
-                              width={48}
-                              height={48}
-                              className="w-full h-full object-cover"
-                            />
-                          ) : (
-                            <span className="font-bold text-white text-lg">
-                              {company.name.charAt(0)}
-                            </span>
-                          )}
+                          <span className="font-bold text-white text-lg">
+                            {company.name.charAt(0)}
+                          </span>
                         </div>
                         <div>
                           <h3 className="text-2xl font-extrabold text-[#0B132B] group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#0B132B] group-hover:to-brand-pink transition-all duration-500 tracking-tight">
