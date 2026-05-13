@@ -495,7 +495,7 @@ export default function AdminPage() {
                             />
                           </div>
                           <div>
-                            <label className="text-xs font-bold text-slate-400 uppercase tracking-wider block mb-1">Photo Filename (in public/team/)</label>
+                            <label className="text-xs font-bold text-slate-400 uppercase tracking-wider block mb-1">Photo Filename (in public/team-photos/)</label>
                             <input
                               type="text"
                               value={member.photo}
