@@ -1,8 +1,8 @@
-import { ScrollReveal } from "@/components/ui/ScrollReveal";
-import { getTeamData } from "@/lib/data";
+"use client";
 
-export default async function Team({ showHeader = true }) {
-  const team = await getTeamData();
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
+
+export default function Team({ team, showHeader = true }) {
 
   return (
     <section id="team" className="relative py-24 bg-[#fbf6f3] overflow-hidden">
@@ -51,7 +51,15 @@ export default async function Team({ showHeader = true }) {
                       alt={member.name}
                       className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-700 ease-out"
                       style={{ filter: "brightness(0.88) contrast(1.04)" }}
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                        e.target.nextSibling.style.display = 'flex';
+                      }}
                     />
+                    {/* Fallback Initials UI */}
+                    <div className="absolute inset-0 hidden items-center justify-center bg-slate-800 text-white/10 text-9xl font-black select-none">
+                      {member.name.split(' ').map(n => n[0]).join('')}
+                    </div>
 
                     {/* Bottom gradient — photo fades into name overlay */}
                     <div className="absolute bottom-0 left-0 right-0 h-44 bg-gradient-to-t from-[#0d0d0d] via-[#0d0d0d]/60 to-transparent z-[2]" />

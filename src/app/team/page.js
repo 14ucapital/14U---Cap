@@ -1,6 +1,7 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Team from "@/components/sections/Team";
+import { getTeamData } from "@/lib/data";
 
 export const metadata = {
   title: "Team — 14U Capital",
@@ -8,7 +9,8 @@ export const metadata = {
     "Meet the leadership behind 14U Capital. Shashank Umashankar and Depesh Vyas — experienced operators dedicated to backing founders at every stage.",
 };
 
-export default function TeamPage() {
+export default async function TeamPage() {
+  const teamData = await getTeamData();
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -33,7 +35,7 @@ export default function TeamPage() {
           </div>
         </section>
 
-        <Team showHeader={false} />
+        <Team team={teamData} showHeader={false} />
       </main>
       <Footer />
     </div>
