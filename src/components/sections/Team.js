@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { getTeamData } from "@/lib/data";
 
@@ -47,12 +46,10 @@ export default async function Team({ showHeader = true }) {
                   <div className="relative w-full h-80 overflow-hidden bg-slate-900">
 
                     {/* Photo */}
-                    <Image
+                    <img
                       src={photoPath}
                       alt={member.name}
-                      fill
-                      className="object-cover object-center group-hover:scale-[1.03] transition-transform duration-700 ease-out"
-                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-700 ease-out"
                       style={{ filter: "brightness(0.88) contrast(1.04)" }}
                     />
 
