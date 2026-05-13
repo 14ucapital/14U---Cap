@@ -40,9 +40,12 @@ export default function Team({ team, showHeader = true }) {
         {/* Team Cards */}
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {team.map((member, i) => {
-            const photoPath = member.photo?.startsWith("http") || member.photo?.startsWith("/") 
-              ? member.photo 
-              : `/team-photos/${member.photo?.toLowerCase()}`;
+            let photoPath = member.photo || '';
+            if (photoPath && !photoPath.startsWith("http")) {
+              // Extract just the filename in case the DB has old paths like "/team/..."
+              const filename = photoPath.split('/').pop().toLowerCase();
+              photoPath = `/team-photos/${filename}`;
+            }
 
             const hasError = imageErrors[member.id];
 
