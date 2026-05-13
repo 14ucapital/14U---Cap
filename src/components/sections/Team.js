@@ -43,7 +43,9 @@ export default function Team({ team, showHeader = true }) {
             let photoPath = member.photo || '';
             if (photoPath && !photoPath.startsWith("http")) {
               // Extract just the filename in case the DB has old paths like "/team/..."
-              const filename = photoPath.split('/').pop().toLowerCase();
+              let filename = photoPath.split('/').pop().toLowerCase();
+              // Force the extension to be .webp, overriding what's in the DB (.jpeg, .png, etc.)
+              filename = filename.replace(/\.[^/.]+$/, "") + ".webp";
               photoPath = `/team-photos/${filename}`;
             }
 
