@@ -42,7 +42,7 @@ export default function Team({ team, showHeader = true }) {
           {team.map((member, i) => {
             const photoPath = member.photo?.startsWith("http") || member.photo?.startsWith("/") 
               ? member.photo 
-              : `/team-photos/${member.photo}`;
+              : `/team-photos/${member.photo?.toLowerCase()}`;
 
             const hasError = imageErrors[member.id];
 
