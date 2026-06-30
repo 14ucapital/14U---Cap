@@ -63,42 +63,6 @@
     "password": "lumin-space",
     "tasks": [],
     "updates": []
-  },
-  {
-    "id": "1778330319473",
-    "name": "New Company",
-    "stage": "PrePost",
-    "sector": "ForTech",
-    "description": "hellohereiamharry",
-    "status": "Hey I am harry",
-    "logo": "hello.jpgpng",
-    "color": "from-indigo-500 to-blue-500",
-    "password": "heyharry",
-    "updates": [
-      {
-        "content": "hiam ahfodsaj",
-        "sender": "Admin",
-        "id": "1778330403891",
-        "timestamp": "2026-05-09T12:40:03.891Z"
-      }
-    ],
-    "tasks": [
-      {
-        "title": "dfadsfsd",
-        "date": "2026-05-11",
-        "status": "in-progress",
-        "id": "1778330409379"
-      }
-    ]
-  },
-  {
-    "id": "1778330482309",
-    "name": "New Company",
-    "stage": "Seed",
-    "sector": "Tech",
-    "description": "",
-    "status": "Currently Raising",
-    "logo": "",
-    "color": "from-brand-pink to-brand-rose"
   }
+
 ]
