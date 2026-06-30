@@ -45,7 +45,7 @@ export default async function HomePortfolio() {
             const itemsInMdRow = Math.floor(i / 2) === Math.floor((total - 1) / 2) ? (total % 2 || 2) : 2;
             if (itemsInMdRow === 1) mdClass = "md:col-span-2"; // Stretch single item on tablet
 
-            const isInvested = company.status === "Invested by 14U";
+            const isInvested = company.status === "Backed by 14U" || company.status === "Invested by 14U";
             
             return (
               <ScrollReveal key={i} delay={i * 0.1} className={`${mdClass} ${lgClass} h-full`}>

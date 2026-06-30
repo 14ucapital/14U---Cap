@@ -51,7 +51,7 @@ export default async function Portfolio({ showHeader = true }) {
             const itemsInMdRow = Math.floor(i / 2) === Math.floor((total - 1) / 2) ? (total % 2 || 2) : 2;
             if (itemsInMdRow === 1) mdClass = "md:col-span-2"; // Stretch single item on tablet
 
-            const isInvested = company.status.includes('Invested');
+            const isInvested = company.status.includes('Invested') || company.status.includes('Backed');
 
             return (
               <ScrollReveal 

@@ -369,7 +369,7 @@ export default function AdminPage() {
                               value={item.status}
                               onChange={(e) => handleUpdatePortfolio(index, "status", e.target.value)}
                               className="w-full bg-slate-50 border border-slate-200 text-slate-700 rounded-lg px-3 py-2 focus:outline-none focus:border-brand-pink text-sm"
-                              placeholder="e.g. Invested by 14U"
+                              placeholder="e.g. Backed by 14U"
                             />
                           </div>
                         </div>
